@@ -1,0 +1,272 @@
+.profile {
+width: 250px; 
+height: 500px; 
+display: block; 
+margin-left: auto; 
+margin-right: auto;
+}
+
+.name {
+    font-size: 20px;  
+    letter-spacing: -1px; 
+    text-align: center; 
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
+
+.main_jobs {
+    text-align: center; 
+    margin-top: 30px; 
+    font-size: 15px;
+}
+
+.another_jobs {
+    text-align: center; 
+    font-size:12px
+}
+
+.box {
+    width : 250px;
+    height : 100px;
+    background-color: rgb(207, 233, 244);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    font-size: 13px;
+    box-shadow: 0px 3px 10px 2px grey ;
+    
+}
+
+.fonts {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.container {
+    width : 1000px;
+}
+
+.header {
+    width : 100%;
+    height:100px;
+    background-color: aliceblue;
+}
+
+.left-menu {
+    width : 20%;
+    height : 400px;
+    background-color: rgb(215, 215, 215);
+    /* float : left; */
+    display: inline-block; 
+    /* 내 크기만큼만 해당하게 해주세요. */
+    vertical-align: top;
+}
+
+.content {
+    width : 80%;
+    height : 400px;
+    background-color: beige;
+    /* float : left; */
+    display: inline-block;
+}
+
+.footer {
+    width : 100%;
+    height:100px;
+    background-color: rgb(254, 197, 196);
+    /* clear: both; */
+}
+
+.main {
+    width : 800px;
+    height:200px;
+    
+    float: left;
+}
+
+.main-image {
+    width: 200px;
+    height:200px;
+    background-color: aqua;
+    float: left;
+    overflow: hidden;
+}
+
+.profile2 {
+    width : 800px;
+    height: 25%;
+    
+    float: left;
+}
+
+.image-container {
+    width: 50px;
+    height: 100%;
+    float: left;
+    margin-top:5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50px;
+    
+    overflow:hidden;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name2 {
+    font-size: 17px;
+    /* float:left; */
+    margin : 0px;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.time-container {
+    width: 100%;
+    height: 60px;
+    margin-left: 70px;
+    
+    
+}
+
+.time {
+    font-size: 15px;
+    /* float: left; */
+    margin: 0px;
+    margin-top: 3px;
+    
+}
+
+.contents {
+    width: 800px;
+    clear: both;
+    height: 65%;
+    
+    padding:10px;
+    padding-top: 20px;
+}
+
+.h2 {
+    margin: 0px;
+    
+}
+
+.paragraph {
+    color: rgb(180, 180, 180)
+}
+
+.image2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navbar {
+    width: 1000px;
+    padding:0px;
+    text-align: center;
+}
+
+.navbar li {
+    display:inline-block;
+    width: 50px;
+    
+    text-align: center;
+}
+
+.navbar a {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.blog-name {
+    width : 1000px;
+    height : 30px;
+    text-align: center;
+}
+
+.main-background {
+    width : 100%;
+    height : 700px;
+    background-image: url(../ff14.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-attachment: fixed; */
+    /* filter:brightness(70%); */
+    padding: 1px;
+}
+
+.main-title {
+    color : white;
+    font-size: 40px;
+    margin-top : 200px;
+    text-align: center;
+}
+
+.main-content {
+    color :white;
+    font-size: 27px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 1px;
+}
+
+a button {
+    width : 180px;
+    height: 50px;
+    padding : 10px;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    background : transparent;
+    /* position: relative; */
+    margin-top: 50px;
+    cursor : pointer;
+    border : 2px solid aliceblue;
+    transition: all 0.3s ease;
+}
+
+.main-button {
+    font-size : 14px;
+    color : aliceblue;
+    text-decoration: none;
+    outline:none;
+}
+
+
+button:hover{
+    box-shadow:
+   -7px -7px 20px 0px rgba(0, 0, 0, 0.6),
+   -4px -4px 5px 0px rgba(207, 207, 207, 0.6),
+   7px 7px 20px 0px rgba(206, 206, 206, 0.133),
+   4px 4px 5px 0px rgba(180, 180, 180, 0.067);
+}
+
+.paragraph2 {
+    width : 70%;
+    max-width : 600px;
+    height: auto;
+    padding : 20px;
+    text-align: center;
+    margin : auto;
+    background-color: rgb(139, 139, 139);
+    position:relative;
+    top : 180px;
+    box-sizing: border-box;
+    margin-bottom : 1px;
+    z-index : 1;
+    /* 보통 이런 box-sizing 같은거는 그냥 div 자체에 정의함 */
+}
+
+.paragraph2-text {
+    color :rgb(244, 244, 244);
+    text-align: center;
+    font-size: 15px;
+}

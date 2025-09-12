@@ -1,0 +1,80 @@
+body {
+    background-color: blanchedalmond;
+    margin: 0px;
+    padding : 70px;
+}
+
+h2 {
+    margin-top : 0px;
+    font-size : 36px;
+    font-weight: 550;
+    letter-spacing: -1px;
+    color :rgb(174, 85, 85);
+    margin-bottom: 50px;
+}
+
+.main {
+    width : 60%;
+    min-width: 500px;
+    min-height: 280px;
+}
+
+table {
+    width : 100%;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    border-collapse: collapse;
+    min-width: 350px;
+    min-height: 280px;
+    
+}
+
+.border-line {
+    border-bottom : 1px solid black;
+    text-align: end;
+    
+}
+
+thead {
+    font-weight: 500;
+}
+
+img {
+    width : 64px;
+    height: 64px;
+}
+
+.total {
+    text-align:end;
+    font-weight: 500;
+    color : rgb(174, 85, 85);
+}
+
+
+td {
+    padding-right: 20px;
+}
+
+a {
+    font-size : 16px;
+    display : inline-block;
+    margin-top : 30px;
+}
+
+button {
+    width : 200px;
+    height: 60px;
+    float : right;
+    background-color: rgb(174, 85, 85);
+    border-radius: 10px;
+    font-size: 15px;
+    box-sizing: border-box;
+    padding : 10px;
+    margin-top: 15px;
+    color : white;
+    font-weight: 480;
+    border : none;
+    cursor :pointer;
+    
+}
+
