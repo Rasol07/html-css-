@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'GMARKET';
-    src: url(../font/GmarketSansTTFMedium.ttf);
+    src: url(../font/GmarketSansTTFMedium.ttf); 
 }
 
 .profile {
@@ -305,4 +305,11 @@ button:hover{
     font-size : 30px;
     font-weight: 800;
     padding-left : 10px;
+}
+
+
+@media screen and (max-width: 1200px){
+    .main-title {
+        font-size: 30px;
+    }
 }

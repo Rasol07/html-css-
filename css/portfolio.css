@@ -1,0 +1,252 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: white;
+    margin: 0px;
+}
+
+.main-page {
+    width: 100%;
+    height: 550px;
+    padding : 100px;
+    background-color: rgb(76, 92, 188);
+}
+
+.main-page h2{
+    color: rgb(255, 255, 255);
+    font-size : 40px;
+    font-weight: 450;
+    margin-top : 50px;
+}
+
+.main-page p {
+    color : white;
+    margin-top : 40px;
+    font-size : 20px;
+}
+
+.main-page button {
+    width : 140px;
+    height : 55px;
+    font-size : 18px;
+    margin-top : 5px;
+    background-color: rgb(44, 44, 44);
+    color : white;
+    border-radius: 7px;
+    box-sizing: border-box;
+    border : none;
+    cursor : pointer;
+}
+
+.sub-page{
+    width : 100%;
+    height: 350px;
+    text-align: center;
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬*/
+    justify-content: center; /* 가로 중앙 정렬 */
+    flex-direction: column;
+}
+
+.sub-page-question {
+    font-weight: 650;
+    font-size : 28px;
+    margin : 0px;
+}
+
+.sub-page-solution {
+    font-size : 18px;
+}
+
+.sub-page button {
+    padding : 20px;
+    font-size : 18px;
+    background-color: rgb(44, 44, 44);
+    color : white;
+    border-radius: 7px;
+    box-sizing: border-box;
+    border : none;
+    cursor : pointer;
+    
+}
+
+.main-work-page {
+    width : 100%;
+    background-color: rgb(102, 71, 173);
+    text-align: center;
+    padding : 60px;
+    color : white;
+}
+
+.main-work-page p{
+    margin:0px;
+}
+
+.main-work-sentence1 {
+    font-weight: 200;
+    
+}
+
+.main-work-sentence{
+    font-weight: 500;
+    font-size : 30px;
+}
+
+.main-work-container {
+    width : 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap : wrap;
+    margin : auto;
+    padding-top : 50px;
+    /* gap : 80px; flex-wrap 이 되면 gap 속성을 사용 가능 */
+}
+
+.main-work-subject {
+    text-align: center;
+    padding: 20px;
+}
+
+.main-work-subject i{
+    width : 150px;
+    height: 150px;
+    background-color: white;
+    color : rgb(102, 71, 173);
+    box-sizing: border-box;
+    padding-top : 40px;
+    border-radius: 100px;
+    margin-bottom : 20px;
+}
+
+.department-page {
+    width : 100%;
+    text-align: center;
+    padding : 60px;
+}
+
+.department-page-summary {
+    margin: 0px;
+}
+
+.department-page-question {
+    margin : 0px;
+    margin-bottom : 50px;
+    font-weight: 500;
+    font-size : 30px;
+}
+
+.grid-container {
+    text-align: start;
+    width : 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,350px);
+}
+
+.grid-item{
+    padding : 30px;
+    background-size : cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color : white;
+}
+
+.grid-item h3{
+    font-size : 28px;
+    margin-bottom : 45px;
+    
+}
+
+.item-1 {
+    /* 첫 번째 레이어: 반투명한 검은색 (RGBA 사용) */
+    /* 두 번째 레이어: 실제 배경 이미지 (url 사용) */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../images/study.jpg');
+
+    /* 기존의 background-size, background-position 등은 그대로 적용됩니다. */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
+}
+
+.item-2 {
+    /* 첫 번째 레이어: 반투명한 검은색 (RGBA 사용) */
+    /* 두 번째 레이어: 실제 배경 이미지 (url 사용) */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../images/finance.jpg');
+
+    /* 기존의 background-size, background-position 등은 그대로 적용됩니다. */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
+}
+
+.item-3 {
+    /* 첫 번째 레이어: 반투명한 검은색 (RGBA 사용) */
+    /* 두 번째 레이어: 실제 배경 이미지 (url 사용) */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../images/customer.jpg');
+
+    /* 기존의 background-size, background-position 등은 그대로 적용됩니다. */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
+}
+
+.item-4 {
+    /* 첫 번째 레이어: 반투명한 검은색 (RGBA 사용) */
+    /* 두 번째 레이어: 실제 배경 이미지 (url 사용) */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../images/watching.jpg');
+
+    /* 기존의 background-size, background-position 등은 그대로 적용됩니다. */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
+}
+
+.contact-page {
+    width : 100%;
+    text-align: center;
+    padding : 50px;
+}
+
+.contact-container {
+    display : flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin : auto;
+    gap : 80px;
+}
+
+.contact-subject{
+    width : 100px;
+    height : 100px;
+    background-color: rgb(102, 71, 173);
+    border-radius : 80px;
+}
+
+.contact-subject i{
+    margin-top : 34px;
+    color : white;
+}
+
+.contact-page p {
+    margin-top : 50px;
+    font-size : 14px;
+}
