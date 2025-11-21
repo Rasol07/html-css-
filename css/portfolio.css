@@ -1,23 +1,55 @@
 * {
     box-sizing: border-box;
 }
+
+/* 1. GMARKET_BOLD 폰트 정의 */
+@font-face {
+    font-family: 'GMARKET_SANS'; /* 대표 폰트 이름을 하나로 통일 */
+    src: url('../font/GmarketSansTTFBold.ttf') format('truetype');
+    font-weight: 700; /* BOLD에 해당하는 굵기 지정 */
+    font-style: normal;
+}
+
+/* 2. GMARKET_MEDIUM 폰트 정의 */
+@font-face {
+    font-family: 'GMARKET_SANS'; /* 같은 이름 사용 */
+    src: url('../font/GmarketSansTTFMedium.ttf') format('truetype');
+    font-weight: 500; /* MEDIUM에 해당하는 굵기 지정 */
+    font-style: normal;
+}
+
+/* 3. GMARKET_LIGHT 폰트 정의 */
+@font-face {
+    font-family: 'GMARKET_SANS'; /* 같은 이름 사용 */
+    src: url('../font/GmarketSansTTFLight.ttf') format('truetype');
+    font-weight: 300; /* LIGHT에 해당하는 굵기 지정 */
+    font-style: normal;
+}
+
 body {
     background-color: white;
     margin: 0px;
 }
 
+p {
+    font-family: 'GMARKET_SANS';
+    font-weight:300;
+}
+
+
 .main-page {
     width: 100%;
-    height: 550px;
-    padding : 100px;
-    background-color: rgb(76, 92, 188);
+    height: 550px;;
+    padding : 50px;
+    background-image: linear-gradient(rgb(77, 77, 153), rgb(102, 71, 173));
 }
 
 .main-page h2{
+    font-family: 'GMARKET_SANS';
     color: rgb(255, 255, 255);
     font-size : 40px;
-    font-weight: 450;
-    margin-top : 50px;
+    font-weight: 500;
+    margin-top : 60px;
 }
 
 .main-page p {
@@ -39,6 +71,17 @@ body {
     cursor : pointer;
 }
 
+
+
+.main-page img {
+    width : 350px;
+    height : 350px;
+    position :absolute;
+    margin: 20px;
+    left : 68%;
+    top : 25%;
+}
+
 .sub-page{
     width : 100%;
     height: 350px;
@@ -50,7 +93,7 @@ body {
 }
 
 .sub-page-question {
-    font-weight: 650;
+    font-weight: 500;
     font-size : 28px;
     margin : 0px;
 }
@@ -141,19 +184,36 @@ body {
     text-align: start;
     width : 100%;
     display: grid;
+    align-content: center;
+    justify-content: center;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(2,350px);
 }
 
 .grid-item{
+    width : 100%;
+    height : 100%;
     padding : 30px;
     background-size : cover;
     background-position: center;
     background-repeat: no-repeat;
     color : white;
+    transition: all 0.7s;
 }
 
+.grid-item:hover {
+    width : 90%;
+    height: 85%;
+    margin-left : 5%;
+    margin-top : 5%;
+    
+}
+
+
+
 .grid-item h3{
+    font-family: 'GMARKET_SANS';
+    font-weight : 500;
     font-size : 28px;
     margin-bottom : 45px;
     
@@ -249,4 +309,44 @@ body {
 .contact-page p {
     margin-top : 50px;
     font-size : 14px;
+}
+
+button {
+    font-family: 'GMARKET_SANS';
+    font-weight: 300;
+    transition: all 0.5s;
+}
+
+button:hover {
+    transform:scale(1.2);
+}
+
+@media screen and (max-width:950px) {
+    .main-page{
+        height : auto;
+        align-content: center;
+        text-align: center;
+    }
+    .main-page img{
+        position: static;
+        left: auto;
+        top : auto;
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+}
+
+@media screen and (max-width: 768px){
+    .grid-container{
+        grid-template-columns: 1fr;
+
+        grid-template-rows: repeat(4, 300px);
+        justify-content: center;
+        align-content: center;
+    }
+    .contact-container{
+        flex-direction: column;
+    }
 }
