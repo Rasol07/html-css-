@@ -307,6 +307,26 @@ button:hover{
     padding-left : 10px;
 }
 
+/* 내부의 일부만 스타일 주고 싶으면 ::pseudo-element*/
+/* :pseudo-class는 어떤 다른 상태가 되었을 때 */
+.pseudo::first-letter {
+    font-size : 30px;
+    color :rgb(131, 105, 155);
+}
+
+.input-file ::file-selector-button{
+    background : rgb(153, 153, 153);
+    border : none;
+    padding : 20px;
+    border-radius : 10px;
+}
+
+.input-file ::file-selector-button:hover{
+    background : rgb(161, 135, 185);
+}
+
+
+/* ::after , ::before */
 
 @media screen and (max-width: 1200px){
     .main-title {

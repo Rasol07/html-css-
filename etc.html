@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>추가 내용</title>
+</head>
+<body>
+    <!-- 버튼에 배경색을 주고 싶지만 저 옆에 있는 span 태그에 적용이 됨.-->
+     <!-- webkit에 해당되는 것 요즘 그냥 해당되는 브라우저들이 해결된다. -->
+    
+     <input type = "file" >
+    <input placeholder="안녕하세요." >
+    <progress value = "0.5"></progress>
+    <style>
+        input[type=file]::-webkit-file-upload-button {
+            background-color: aliceblue;
+            border : none;
+            padding : 10px;
+        }
+
+        input::-webkit-input-placeholder {
+            appearance: none;
+            color : red;
+            background-color: white;
+        }
+
+        progress {
+            width : 300px;
+            appearance: none;
+            background-color: white;
+        }
+
+        progress::-webkit-progress-value {
+            appearance: none;
+            background: linear-gradient(to right, rgb(247, 162, 162), rgb(165, 155, 232));
+            border-radius: 15px;
+        }
+
+        progress::-webkit-progress-bar {
+            appearance: none;
+            background-color: lightgray;
+            border-radius: 15px;
+        }
+    </style>
+</body>
+</html>
