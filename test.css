@@ -1,0 +1,175 @@
+@charset "UTF-8";
+/* scss는 css랑 똑같음 문제는 웹브라우저는 scss는 이해하지 못함. */
+/* scss -> css 로 변환 */
+/* $변수명 으로 해서 변수 사용가능*/
+/* css내에서의 변수 사용 */
+/* :root {
+  --main-color : red;
+} */
+/* 외부 파일 가져오기 */
+body {
+  margin: 0;
+  padding: 20px;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+/* nesing 문법*/
+.main-bg h4 {
+  font-size: 16px;
+}
+.main-bg button {
+  color: red;
+}
+
+/* 임시클래스 - 단독 컴파일 안됨.*/
+.btn-red, .btn-green {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+}
+
+/* @extend 문법 */
+.btn-green {
+  color: green;
+}
+
+.btn-red {
+  color: red;
+}
+
+.container-blue, .container-red, .container-green {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+.container-green {
+  background: green;
+}
+
+.container-red {
+  background-color: red;
+}
+
+.container-blue {
+  background-color: blue;
+}
+
+/* @mixin 문법 - 약간 함수랑 비슷 */
+/* 가변적으로 사용이 가능 - parameter */
+h2 {
+  font-size: 30px;
+  letter-spacing: -1px;
+  width: 100px;
+  color: brown;
+}
+
+h3 {
+  font-size: 20px;
+  letter-spacing: -1px;
+  width: 100px;
+}
+
+.background {
+  background-color: #3498db;
+  font-size: 16px;
+}
+
+.box {
+  width: 100%;
+  font-size: 18px;
+}
+
+li {
+  list-style: none;
+  border: 1px solid rgb(204, 204, 204);
+  width: 250px;
+  padding: 10px;
+}
+li.active {
+  background-color: rgb(88, 95, 165);
+  color: white;
+  border: 1px solid rgb(88, 95, 165);
+}
+
+.alert-success {
+  background-color: rgb(151, 239, 151);
+  color: rgb(55, 116, 55);
+  width: auto;
+  height: auto;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.alert-attention {
+  background-color: rgb(132, 177, 254);
+  color: rgb(37, 41, 97);
+  width: auto;
+  height: auto;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.alert-warning {
+  background-color: rgb(222, 151, 121);
+  color: rgb(134, 90, 56);
+  width: auto;
+  height: auto;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.alert-success p {
+  display: inline;
+}
+.alert-success p.bold {
+  font-weight: bold;
+}
+
+.alert-attention p {
+  display: inline;
+}
+.alert-attention p.bold {
+  font-weight: bold;
+}
+
+.alert-warning p {
+  display: inline;
+}
+.alert-warning p.bold {
+  font-weight: bold;
+}
+
+.row {
+  width: 100%;
+  background-color: rgba(182, 156, 196, 0.566);
+  --bs-gutter-x: 0px;
+  margin-top: 10px;
+}
+
+.col-6 {
+  width: 50%;
+  border: 1px solid rgb(141, 112, 156);
+  padding: 10px;
+}
+
+.col-4 {
+  width: 33.3333333333%;
+  border: 1px solid rgb(141, 112, 156);
+  padding: 10px;
+}
+
+.col-3 {
+  width: 25%;
+  border: 1px solid rgb(141, 112, 156);
+  padding: 10px;
+}/*# sourceMappingURL=test.css.map */

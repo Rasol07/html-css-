@@ -1,0 +1,191 @@
+/* scss는 css랑 똑같음 문제는 웹브라우저는 scss는 이해하지 못함. */
+/* scss -> css 로 변환 */
+
+/* $변수명 으로 해서 변수 사용가능*/
+
+
+/* css내에서의 변수 사용 */
+/* :root {
+  --main-color : red;
+} */
+
+/* 외부 파일 가져오기 */
+@use 'reset';
+
+/* nesing 문법*/
+.main-bg {
+    h4 {
+        font-size : 16px;
+    }
+
+    button {
+        color : red;
+    }
+}
+
+
+/* 임시클래스 - 단독 컴파일 안됨.*/
+%btn {
+    width : 100px;
+    height : 100px;
+    padding : 20px;
+}
+
+/* @extend 문법 */
+.btn-green {
+    @extend %btn;
+    color : green;
+}
+
+.btn-red {
+    @extend %btn;
+    color : red;
+}
+
+%bg {
+    width : 200px;
+    height : 200px;
+    padding : 20px;
+}
+
+.container-green {
+    @extend %bg;
+    background: green;
+}
+
+.container-red {
+    @extend %bg;
+    background-color: red;
+}
+
+.container-blue {
+    @extend %bg;
+    background-color : blue;
+}
+
+/* @mixin 문법 - 약간 함수랑 비슷 */
+/* 가변적으로 사용이 가능 - parameter */
+
+@mixin font($size, $parameter){
+    font-size : $size;
+    letter-spacing : -1px;
+    #{$parameter} : 100px;
+}
+
+h2 {
+    @include font(30px, width);
+    color : reset.$메인칼라;
+}
+
+h3 {
+    @include font(20px, width);
+}
+
+
+
+$메인칼라 : #3498db;
+$기본사이즈 : 16px;
+
+.background {
+    background-color : $메인칼라;
+    font-size : $기본사이즈;
+}
+
+.box {
+    width : 100%;
+    font-size : ($기본사이즈 + 2px);
+}
+
+$list-color : rgb(204, 204, 204);
+$font-change-color : white;
+$list-change-color : rgb(88, 95, 165);
+li {
+    list-style : none;
+    border : 1px solid $list-color;
+    width : 250px;
+    padding : 10px;
+
+    &.active{
+        background-color : $list-change-color;
+        color : $font-change-color;
+        border : 1px solid $list-change-color;
+    }
+}
+
+@mixin alert-style($bg-color, $font-color) {
+    background-color : $bg-color;
+    color : $font-color;
+    width : auto;
+    height : auto;
+    padding : 20px;
+    border-radius : 5px;
+    font-size : 14px;
+    margin-top : 10px;
+    
+}
+
+.alert-success {
+    @include alert-style(rgb(151, 239, 151), rgb(55, 116, 55));
+}
+
+
+
+.alert-attention {
+    @include alert-style(rgb(132, 177, 254), rgb(37, 41, 97));
+}
+
+.alert-warning {
+    @include alert-style(rgb(222, 151, 121), rgb(134, 90, 56));
+}
+
+.alert-success p {
+    display : inline;
+
+    &.bold {
+        font-weight : bold;
+    }
+}
+
+.alert-attention p {
+    display : inline;
+
+    &.bold {
+        font-weight : bold;
+    }
+}
+
+.alert-warning p {
+    display : inline;
+
+    &.bold {
+        font-weight : bold;
+    }
+}
+
+$row-color : rgba(182, 156, 196, 0.566);
+
+.row {
+    width :100%;
+    background-color: $row-color;
+    --bs-gutter-x: 0px;
+    margin-top : 10px;
+}
+
+@mixin col($num){
+    width : calc(100% / $num);
+    border : 1px solid rgb(141, 112, 156);
+    padding : 10px;
+
+}
+
+.col-6 {
+    @include col(2);
+}
+
+.col-4 {
+    @include col(3);
+}
+
+.col-3 {
+    @include col(4);
+}
