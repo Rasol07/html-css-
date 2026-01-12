@@ -1,0 +1,141 @@
+body {
+    padding : 0px;
+    box-sizing : border-box;
+    margin : 0px;
+}
+
+.button1 {
+    padding : 17px;
+    border : none;
+    border-radius : 5px;
+    font-size : 16px;
+    background-color: rgb(162, 193, 220);
+    color : white;
+    cursor : pointer;
+    margin-left : 200px;
+    margin-top: 20px;
+}
+
+.button1:hover{
+    animation-name : shake;
+    animation-duration : 0.8s;
+}
+
+@keyframes shake{
+    0% {
+        transform : rotate(0deg);
+    }
+    25% {
+        transform : rotate(-15deg);
+    }
+    50% {
+        transform : rotate(15deg);
+    }
+    75% {
+        transform : rotate(-15deg);
+    }
+    100% {
+        transform : rotate(0deg);
+    }
+}
+
+.plus-sign {
+    font-size : 50px;
+    display : inline-block; /* 글자와 같은 요소들이 글꼴에 영향을 받는 것이 아닌 상자취급을 해줘! 하면 필요하다 */
+    margin-left : 200px;
+}
+
+.plus-sign:hover{
+    animation-name : plus-ani;
+    animation-duration : 1s;
+    animation-fill-mode : forwards; /* 애니메이션이 끝난 후의 상태를 유지 */
+}
+
+@keyframes plus-ani {
+    0% {
+        transform : scale(1) rotate(0deg);
+    }
+    25% {
+        transform : scale(1) rotate(-15deg);
+    }
+    100% {
+        transform : scale(2) rotate(45deg);
+    }
+}
+
+.menu-box {
+    height : 100%;
+    width : 10%;
+    background-color: black;
+    color : white;
+    position: fixed;
+    text-align : center;
+    animation : menu-ani-out 1s forwards;
+}
+
+.menu-item1 {
+    right : 300px;
+    position : relative;
+    animation : slide-out 0.8s forwards;
+}
+
+.menu-box:hover{
+    animation-name : menu-ani;
+    animation-duration : 1s;
+    animation-fill-mode : forwards;
+}
+
+
+.menu-box:hover .menu-item1{
+    animation-name : slide-in;
+    animation-duration : 0.8s;
+    animation-fill-mode : forwards;
+}
+
+@keyframes menu-ani {
+    0% {
+        width : 10%;
+        height : 100%;
+    }
+    100% {
+        width : 30%;
+        height : 100%;
+    }
+}
+
+@keyframes menu-ani-out {
+    0%{
+        width : 30%;
+    }
+    100% {
+        width : 10%;
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform : translateX(0px) skew(0deg);
+    }
+    25% {
+        transform : translateX(150px) skew(45deg);
+    }
+    100% {
+        transform : translateX(300px) skew(0deg);
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        transform : translateX(300px) skew(0deg);
+    }
+    25% {
+        transform : translateX(300px) skew(0deg);
+    }
+    75% {
+        transform : translateX(200px) skew(-45deg);
+    }
+    
+    100% {
+        transform : translateX(0px) skew(0deg);
+    }
+}

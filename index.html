@@ -15,5 +15,17 @@
     <div class = "box">
         <p class = "fonts"> FF14 현자유저 이라솔입니다. </p>
     </div>
+<!-- 
+    <video src = "bridge.mp4" controls></video> -->
+    <!-- 이런 식으로 타입까지 명시해주는 것이 좋다. 이런 식으로 하면 호환성을 챙기는 것이 가능-->
+    <video controls loop preload="metadata" >
+        <source src = "bridge.mp4" type = "video/mp4">
+    </video>
+
+    <!-- transform -->
+     <!-- 애니메이션은 조금 성능상에서 이슈가 있을 수 있기 때문에 transform을 사용하는 것이 좋다. -->
+     <!-- Render Tree -> Layout-> paint -> composite 순으로 작동된다. -->
+     <!-- 위의 수정할 때 뒤에 있는 부분까지 다 같이 움직이기에 -->
+     <h4 class = "ani-text"> 안녕하세요. </h4>
 </body>
 </html>

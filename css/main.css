@@ -325,6 +325,33 @@ button:hover{
     background : rgb(161, 135, 185);
 }
 
+.ani-text {
+    /* 애니메이션 줄 때 편리함 */
+    /* transform : translateX(100px); */
+    text-align: center;
+    /* transition은 a->b만 가능함 */
+}
+
+.ani-text:hover {
+    animation-name : move;
+    animation-duration : 1s;
+}
+
+@keyframes move {
+    /* 이렇게 각각의 진행 정도에 따라서 설정 할 수 있다 */
+    0% {
+        transform : translateX(0px);
+    }
+    25% {
+        transform : translateX(-100px);
+    }
+    75% {
+        transform : translateX(100px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
 
 /* ::after , ::before */
 
