@@ -1,0 +1,18 @@
+.grey {
+    background-color: lightgray;
+    height : 2000px;
+    margin-top : 500px;
+}
+
+.image {
+    float : right;
+    width : 400px;
+    position: sticky; /* position : fixed와 비슷 / 얘는 조건부 고정임 저게 딱 보일때 */
+    top : 100px; 
+    /*어디에 고정될지 정하기 */
+}
+
+.text {
+    float : left;
+    width : 300px;
+}

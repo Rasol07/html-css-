@@ -1,0 +1,115 @@
+.btn-search {
+    margin-left : -50px;
+    background-color: rgb(79, 79, 79);
+    
+}
+
+.menu-container {
+    width : 60px;
+    height: 100%;
+    display : flex;
+    flex-direction: column;
+    position: fixed;
+    top : 0;
+    left : 0;
+    z-index : 1050;
+    align-items: center;
+    background-color: rgb(114, 81, 145);
+    padding : 5px;
+}
+
+.menu-container i {
+    margin-top : 20px;
+    margin-bottom: 20px;
+    color : white;
+    scale : 1.5;
+}
+
+.navbar, .content-container{
+    margin-left : 60px;
+}
+
+.content-container {
+    padding : 15px;
+    background-color: rgba(238, 238, 238, 0.604);
+}
+
+.content-container h2 {
+    font-weight: 600;
+}
+
+.dashboard-container {
+    width : 100%;
+    display : grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.dashboard {
+    border-radius : 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+}
+
+.dashboard-box1 {
+    background-color: rgb(134, 199, 255);
+}
+
+.inside-box {
+    width : 97%;
+    padding : 20px;
+    background-color: white;
+    margin-left: 9px;
+    border-radius: 8px;
+    display : flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inside-box i {
+    opacity: 0.5;
+}
+
+.dashboard-box2{
+    background-color: rgb(86, 204, 86);
+}
+
+.dashboard-box3{
+    background-color: rgb(85, 74, 206);
+}
+
+.dashboard-box4{
+    background-color: rgb(233, 211, 90);
+}
+
+.content h3{
+    font-weight: 550;
+}
+
+.sub-container {
+    display: flex;
+    align-items: flex-start;
+    gap : 50px;
+}
+
+
+.chart-container h3{
+    font-size: 20px;
+    font-weight: 550;
+    padding : 30px;
+    padding-bottom: 20px;
+}
+
+.chart-container {
+    width : 70%;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.115);
+}
+
+.task-container {
+    width : 30%;
+    height : 300px;
+}
+
+.task-container .list-group-item:first-child{
+    background-color: transparent !important;
+}
