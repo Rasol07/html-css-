@@ -1,0 +1,62 @@
+body {
+    background-color: rgb(54, 54, 54);
+}
+.slide-container {
+    width : 300vw; 
+    height : 90vh;
+}
+
+.slide-box {
+    width : 100vw;
+    height : 100%;
+    float : left;
+}
+
+.slide-box img {
+    width : 100%;
+    height : 100%;
+    object-fit : contain;
+    object-position: center;
+}
+
+.slide-box:nth-child(2) {
+    background-color: antiquewhite;
+}
+
+.slide-box:last-child img {
+    object-fit: contain;
+    width : 100%;
+}
+
+.main-nav {
+    padding-left : 18%;
+    padding-right : 15%;
+    padding-top: 7px;
+    background-color: transparent;
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-weight : 600 !important;
+    font-size : 13px !important;
+}
+
+.navbar-brand i {
+    color : white;
+    font-size : 20px;
+    text-align: center;
+}
+
+.nav-detail {
+    position: fixed;
+    width : 100%;
+    z-index : 5;
+    
+}
+
+.comment {
+    width : 200px;
+    height : 100px;
+    overflow-y: scroll;
+    color : white;
+}
+

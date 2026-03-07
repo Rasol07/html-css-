@@ -1,0 +1,85 @@
+body {
+    background-color: black;
+}
+
+.main-nav {
+    padding-left : 18%;
+    padding-right : 15%;
+    padding-top: 7px;
+    background-color: transparent;
+    position: absolute;
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-weight : 600 !important;
+    font-size : 13px !important;
+}
+
+.navbar-brand i {
+    color : white;
+    font-size : 20px;
+    text-align: center;
+}
+
+.nav-detail {
+    position: fixed;
+    width : 100%;
+    z-index : 5;
+    
+}
+
+.comment {
+    width : 200px;
+    height : 100px;
+    overflow-y: scroll;
+    color : white;
+}
+
+.main-img {
+    display : block; /* img 태그는 inline 속성 */
+    object-position: center;
+    object-fit : cover;
+    width : 100%;
+    height : 100vh;
+}
+
+.main-background {
+    width : 100%;
+    height : 100vh;
+    background-repeat: no-repeat;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.mainMenu-container {
+    position: absolute;
+    top : 50%;
+    padding : 5%;
+    padding-left : 10%;
+    padding-right: 10%;
+    transform: translateX(-50%, -50%);
+    z-index: 5;
+}
+
+.title {
+    color : white;
+    font-size : 48px;
+    font-weight: 700;
+}
+
+/*
+    background와 object 차이
+    background는 어떤 빈 박스에 하는 것 div쪽
+    object 경우는 img와 같은 그런 이미 정해져있는 요소에 넣기
+    최적화에 유리함. (이미지 먼저 불러오기 때문)
+    이미지 위에 글자를 올릴 경우 position : absolute 같은 것ㅇ 필요해서 레이아웃 잡기가 어렵다네
+    // 배경 위에 글자 필요하다 있으면 써야함
+*/
+
+/*
+position : absolute
+이거는 relative를 부모로 해서 그걸 기준점으로 잡아 움직임
+relative가 없는 경우는 계속 올라가 html 태그까지 올라가기에
+html -> viewport가 기준점 (fixed와 같다)
+
+*/

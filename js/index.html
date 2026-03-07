@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <link rel = "stylesheet" href = "main.css">
+</head>
+<body>
+    <div class = "alert-box" id = "alert">
+        <p class = "title1" id = "alert-content">
+            아이디입력하세요.
+        </p>
+        <button id = "close">
+            닫기
+        </button>
+    </div>
+    <button onclick = "alert('block', '아이디 입력하세요')">
+        버튼1
+    </button>
+    <button onclick = "alert('block', '비번입력하세요.')">
+        버튼2
+    </button>
+
+    <script>
+
+        document.getElementById('close').addEventListener('click', function(){
+            alert('none', '');
+        });
+        // function 작명 () {}
+        function alert(command, content) {
+            document.getElementById('alert').style.display = command;
+            document.getElementsByClassName('title1')[0].innerHTML = content;
+        }
+        // getElementsByClassName은 class 이름이 같을 수 있기 때문에 인덱스로 표시해줘야함.
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel = "stylesheet" href="homepage.css">
+    <title>title</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light nav-detail">
+        <div class="container-fluid main-nav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item font">
+                    <a class="nav-link active  text-white" aria-current="page" href="#">Story</a>
+                </li>
+                <li class="nav-item font">
+                    <a class="nav-link active text-white" aria-current="page" href="#">Content</a>
+                </li>
+                <li class="nav-item font">
+                    <a class="nav-link active text-white" aria-current="page" href="#">Community</a>
+                </li>
+                <li class="nav-item font">
+                    <a class="nav-link active text-white" aria-current="page" href="#">Shop</a>
+                </li>
+                <li class="nav-item font">
+                    <a class="nav-link active text-white" aria-current="page" href="#">POP</a>
+                </li>
+            </ul>
+            
+            <div class="ms-auto d-flex">
+                <a class="navbar-brand ms-3" href="#">
+                    <i class="fa-regular fa-bell"></i>
+                </a>
+                <a class="navbar-brand ms-3" href="#">
+                    <i class="fa-regular fa-calendar"></i>
+                </a>
+                <a class="navbar-brand ms-3" href="#">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </a>
+                <a class="navbar-brand ms-3" href="#">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+            </div>
+            </div>
+        </div>
+    </nav>
+    <div style = "overflow: hidden;">
+        <div class ="slide-container">
+            <div class = "slide-box">
+                <img src = "img/background.jpg">
+            </div>
+            <div class = "slide-box">
+                <img src = "img/trans2.png">
+            </div>
+            <div class = "slide-box">
+                <img src = "img/trans.png">
+            </div>
+        </div>
+    </div>
+    
+    <button class = "slide-1">
+        1
+    </button>
+    <button class = "slide-2">
+        2
+    </button>
+    <button class = "slide-3">
+        3
+    </button>
+    
+    <button class = "next">
+        다음
+    </button>
+
+    <div class = "comment">
+        아 오늘 할일이 진짜 개많은데 너무 바쁘다 이거 괜찮은 거 맞냐 나 진짜 너무걱정되서 죽겠어요
+        이게 아닌것같은데... 집에 가고싶다 집에 보내줘~ 날 집에 보내줘
+        도저히 망한 것 같아서 그냥 울고 있을 뿐이다.
+        우엥 아니 갑자기 이렇게 뜨는 건 또 뭔데
+        채린이 캐입 같은 걸 내가 할 수 있냐고 젠장
+        그래도 일단은 시간적인 여유 있으니까 괜찮지 않을까 싶다.
+        지멋대로 생기지 말라고 죽을래?
+    </div>
+
+    <div style = "height : 400px;">
+
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+
+    <script>
+        let currentSlide = 1;
+
+        $('.slide-1').on('click', function() {
+            $('.slide-container').css('transform', 'translateX(0vw)');
+            currentSlide = 1;
+            console.log('slide-1 clicked');
+        })
+        $('.slide-2').on('click', function() {
+            $('.slide-container').css('transform', 'translateX(-100vw)');
+            currentSlide = 2;
+            console.log('slide-2 clicked');
+        })
+        $('.slide-3').on('click', function() {
+            $('.slide-container').css('transform', 'translateX(-200vw)');
+            currentSlide = 3;
+            console.log('slide-3 clicked');
+        })
+
+
+        $('.next').on('click', function() {
+            if(currentSlide < 3) {
+                $('.slide-container').css('transform', `translateX(-${currentSlide*100}vw)`); // 변수 쓸 때는 이런식으로 하네
+                currentSlide++;
+            }
+            else {
+                $('.slide-container').css('transform', 'translateX(0vw)');
+                currentSlide = 1;
+            }
+        })
+
+        function cal(a, b){
+            let answer;
+            answer = (60 * a + b) * 1000;
+            return answer;
+        }
+
+        console.log(cal(1,30));
+        
+        // 스크롤바 관련 - window 안에 있는 document
+        // $(window).on('scroll', function(){})
+        // window.addEventListener('scroll', function(){
+        //     // 얼마나 내렸는지.
+        //     // console.log(window.scrollY);
+        // })
+
+        // 1. 전체 스크롤바를 100px 내리면 폰트 사이즈 작게.
+       $(window).on('scroll', function(){
+        if ($(window).scrollTop() >= 100) {
+            $('.nav-link').attr('style', 'font-size: 18px !important;');
+            $('.navbar-brand i').css('font-size', '25px');
+            $('.main-nav').css('background-color', 'rgba(54, 54, 54, 0.8)');
+        }
+        else {
+            $('.nav-link').attr('style', 'font-size: 13px !important;');
+            $('.navbar-brand i').css('font-size', '20px');
+            $('.main-nav').css('background-color', 'transparent');
+        }
+       })
+
+       // 2. 박스 끝까지 스크롤 하면 알림 띄우기
+       $('.comment').on('scroll', function(){
+        let userScroll = $('.comment').scrollTop();
+        let divHeight = document.querySelector('.comment').clientHeight;
+        let height = document.querySelector('.comment').scrollHeight;
+
+        console.log(height);
+        console.log(divHeight);
+        console.log(userScroll);
+        if(userScroll + divHeight > height - 10 ) {
+            alert('그 글을 다 읽었네 ㅅㄱ');
+            // 한번만 실행하기
+            $(this).off('scroll');
+            console.log('확인');
+        }
+       })
+    </script>
+</body>
+</html>
