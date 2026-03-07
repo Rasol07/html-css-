@@ -2,9 +2,10 @@ body {
     background-color: black;
 }
 
+
 .main-nav {
-    padding-left : 18%;
-    padding-right : 15%;
+    padding-left : 9%;
+    padding-right : 9%;
     padding-top: 7px;
     background-color: transparent;
     position: absolute;
@@ -52,6 +53,7 @@ body {
 }
 
 .mainMenu-container {
+    width : 100%;
     position: absolute;
     top : 50%;
     padding : 5%;
@@ -67,6 +69,52 @@ body {
     font-weight: 700;
 }
 
+.icon-container {
+    padding-top : 10px;
+    padding-bottom: 20px;
+    display : flex;
+    flex-wrap: wrap; /* wrap으로 쌀지 안쌀지 넣으면 자동으로 줄바꿈 */
+    justify-content: flex-start; /* 시작점만 알리기 */
+    gap : 13px;
+}
+
+.sns-icon {
+    color : rgba(255, 255, 255, 0.327);
+    width : 28px;
+}
+
+.button-container {
+    width : 100%;
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap : 4px;
+    
+}
+
+/*
+js로 버튼 애니메이션 구현
+*/
+
+.start-content {
+    width : 84px;
+    background-color: transparent;
+    color : white;
+    padding : 10px 15px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor : pointer;
+}
+
+.start-button {
+    border-radius: 30px;
+    border : 1px solid ;
+}
+
+.button-container a:hover {
+    color : white;
+    text-decoration: none;
+}
 /*
     background와 object 차이
     background는 어떤 빈 박스에 하는 것 div쪽
