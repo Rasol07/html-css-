@@ -24,11 +24,31 @@ for (let i=0; i<3; i++){
     console.log('안녕');
 }
 
-for (let i=0; i<length; i++){
-    button_selector.eq(i).on('click', function(){
+// for (let i=0; i<length; i++){
+//     tabOpen(i);
+// }
+
+// 탭 기능 이벤트 리스너 1개만 쓰기
+$('.list').click(function(e){
+    // 지금 누른 게 버튼 0이면 버튼 0에 orange 박스 0 show
+    // 이건 tabOpen
+    // if(e.target == document.querySelectorAll('.tab-button')[0]){
+    //     tabOpen(0);
+    // }
+    // 탭열기 (data-id 값);
+    // e.target 은 지금 누른 버튼 가져옴
+    tabOpen(e.target.dataset.id);
+    console.log(e.target.dataset.id);
+})
+
+function tabOpen(index) {
+    button_selector.eq(index).on('click', function(){
         $('.tab-button').removeClass('orange');
-        $('.tab-button').eq(i).addClass('orange');
+        $('.tab-button').eq(index).addClass('orange');
         $('.tab-content').removeClass('show');
-        $('.tab-content').eq(i).addClass('show');
+        $('.tab-content').eq(index).addClass('show');
     })
 }
+
+
+console.log(document.querySelector('.tab-button').dataset.id);

@@ -131,11 +131,34 @@
 
         document.querySelector('.homework-btn').addEventListener('click',function(){
             $('.black-bg').addClass('show-modal');
+            
         })
 
         document.getElementsByClassName('btn-danger')[0].addEventListener('click', function(){
             $('.black-bg').removeClass('show-modal');
         })
+
+        // 이벤트 함수 알아보기
+        // 왜냐하면 우리 이벤트 버블링 때문에. - 클릭할 때 한 번 생각해봐라.
+
+        //e.target : 유저가 실제로 누른 거
+        // e.currentTarget : 이벤트 리스너 달린 곳 
+        // this 랑 같다. 
+        // e.preventDefault() : 이벤트의 기본 동작을 막아주세요. submit 같은 거
+        // e.stopPropagation : 상위요소 이벤트 버블링 막아주세요
+
+       // 또 저거는 jQuery로 하면 안되네 - 뭔가 다름
+       // jQuery로 할려면 jQuery 형태로 하기 
+
+        document.querySelector('.black-bg').addEventListener('click', function(e){
+            console.log(e.target); // 이건 진짜진짜지지닌짜 누른거
+            console.log(document.querySelector('.black-bg')); 
+            console.log(e.currentTarget); // 이벤트 리스너 위에 black-bg였어서 이거 가져옴!
+            if(e.target == document.querySelector('.black-bg')){
+                document.querySelector('.black-bg').classList.remove('show-modal');
+            }
+        })
+        
 
         // 전송 버튼 누르고 input 입력값이 공백이면 알림창 띄우기 (alert)
         document.querySelector('.btn-primary').addEventListener('click', function(event){
