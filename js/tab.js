@@ -50,5 +50,20 @@ function tabOpen(index) {
     })
 }
 
+// 배열로 하면 편하지 않을까?
 
+// var car = '소나타';
+// var carPrice = 50000;
+// var carColor = 'white';
+
+//array 자료형 : 자료형 상관 없음
+var car = ['소나타', 50000, 'white'];
+console.log(car[1]);
+
+//object 자료형으로 이름붙여서 저장할 수 있다. 순서 개념이 없음.
+var car2 = {name : '소나타', price : [50000, 3000, 4000]};
+console.log(car2.name); // 이런 식으로 key를 가져올 수 있다.
+
+document.querySelectorAll('.car-title')[0].innerHTML = car2.name;
+document.querySelectorAll('.car-title')[1].innerHTML = car2.price[0];
 console.log(document.querySelector('.tab-button').dataset.id);
