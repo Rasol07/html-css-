@@ -36,31 +36,38 @@ body {
 }
 
 .main-container span {
+    display : inline-block;
     text-align: center;
     font-size : 48px;
     font-weight : 700;
     display : flex;
     justify-content: center;
-    /* margin-bottom : 500px; */
+    margin-bottom : 30px;
+    
 }
 
 .list-container {
-    margin-top : 30px;
     display : flex;
     align-items: center;
     justify-content: start;
+    margin-bottom : 20px;
 }
 
 .check-box {
     margin-right : 15px; 
     width : 18px;
     height : 18px;
+    accent-color: rgb(232, 181, 255);
 }
 
 /*check-box도 바꿀 수 있을 것 같네*/
 
 .list-text {
     width : 300px;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    height : 38px;
+    max-height: 190px;
     font-size : 15px;
     font-weight : 500;
     background-color: transparent;
@@ -70,6 +77,7 @@ body {
     color : white;
     font-family : 'GMARKET_SANS';
     margin-right : 10px;
+    padding : 10px;
 }
 
 .delete-button {
@@ -85,9 +93,21 @@ body {
     font-size: 30px;
     color : white;
     cursor : pointer;
+    /* 아하 그냥 여기도 transition을 넣어두면 되는 구먼!*/
+    transition: 0.7s ease-out;
+    transform: rotate(0deg);
+
+
 }
 
 .addition-list:hover {
-    transition: 0.5s ease-out;
-    transform : rotate(90deg);
+    transition: 0.7s ease-out;
+    transform : rotate(180deg);
+    color : rgb(232, 181, 255);
+}
+
+
+
+.completed {
+    text-decoration: line-through;
 }

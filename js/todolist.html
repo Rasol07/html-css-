@@ -12,16 +12,22 @@
         <span>To Do List</span>
         
         <!-- 하나 제작 -->
-        <div class = "list-container">
-            <input type = "checkbox" class = "check-box" >
-            <textarea placeholder="할 일" class = "list-text"></textarea>
-            <i class="delete-button fa-solid fa-xmark "></i>
+        <div class = "list-wrapper">
+            <div class = "list-container">
+                <input type = "checkbox" class = "check-box" >
+                <textarea id = "todo-text" placeholder="할 일" class = "list-text"></textarea>
+                <i class="delete-button fa-solid fa-xmark "></i>
+            </div>
+            
         </div>
+        
 
         <!-- 추가 버튼 만들기 -->
          <div class = "addition-list">
             <i class="fa-solid fa-plus"></i>
          </div>
     </div>
+
+    <script src = "todolist.js"></script>
 </body>
 </html>
