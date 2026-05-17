@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'GMARKET_SANS'; /* 대표 폰트 이름을 하나로 통일 */
+    src: url('../font/GmarketSansTTFBold.ttf') format('truetype');
+    font-weight: 700; /* BOLD에 해당하는 굵기 지정 */
+    font-style: normal;
+}
+
+/* 2. GMARKET_MEDIUM 폰트 정의 */
+@font-face {
+    font-family: 'GMARKET_SANS'; /* 같은 이름 사용 */
+    src: url('../font/GmarketSansTTFMedium.ttf') format('truetype');
+    font-weight: 500; /* MEDIUM에 해당하는 굵기 지정 */
+    font-style: normal;
+}
+
+/* 3. GMARKET_LIGHT 폰트 정의 */
+@font-face {
+    font-family: 'GMARKET_SANS'; /* 같은 이름 사용 */
+    src: url('../font/GmarketSansTTFLight.ttf') format('truetype');
+    font-weight: 300; /* LIGHT에 해당하는 굵기 지정 */
+    font-style: normal;
+}
+
+body {
+    background-color: rgb(48, 48, 48);
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    font-family:  'GMARKET_SANS';
+}
+
+.main-container {
+    margin: 50px;
+    margin-top : 50px;   
+    color : white;
+}
+
+.main-container span {
+    text-align: center;
+    font-size : 48px;
+    font-weight : 700;
+    display : flex;
+    justify-content: center;
+    /* margin-bottom : 500px; */
+}
+
+.list-container {
+    margin-top : 30px;
+    display : flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.check-box {
+    margin-right : 15px; 
+    width : 18px;
+    height : 18px;
+}
+
+/*check-box도 바꿀 수 있을 것 같네*/
+
+.list-text {
+    width : 300px;
+    font-size : 15px;
+    font-weight : 500;
+    background-color: transparent;
+    border-radius: 10px;
+    border : 1px solid white;
+    resize : none;
+    color : white;
+    font-family : 'GMARKET_SANS';
+    margin-right : 10px;
+}
+
+.delete-button {
+    font-size: 20px;
+    cursor : pointer;
+    
+}
+
+.addition-list {
+    margin-top: 20px;
+    display : flex;
+    justify-content: center;
+    font-size: 30px;
+    color : white;
+    cursor : pointer;
+}
+
+.addition-list:hover {
+    transition: 0.5s ease-out;
+    transform : rotate(90deg);
+}
