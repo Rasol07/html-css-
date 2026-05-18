@@ -46,6 +46,10 @@ body {
     
 }
 
+.time {
+    text-align: center;
+}
+
 .list-container {
     display : flex;
     align-items: center;

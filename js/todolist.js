@@ -107,4 +107,14 @@ listWrapper.addEventListener('input', function(event) {
 // 그러고 listText의 height = scrollY 되는 만큼을 가져와야함
 
 
+// time class에 있는 항목의 내용이 오늘 연월일로 나오게 하기
+let time = document.querySelector('.time');
+let now = new Date();
+
+// toString() : 날짜랑 시간 초수까지 영어로 변환
+// toLocaleString() : 날짜 시간 초수를 한글로
+// toLocaleDateString() : 날짜까지만
+// toLocalTimeString() : 시간만
+
+time.innerHTML = now.toLocaleDateString();
 
