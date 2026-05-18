@@ -2,6 +2,12 @@
 // 저거 리스트가 하나 떠야하고
 // + 버튼은 아래로 내려가야 한다.
 // 그러면 그냥 추가만 하면 자동으로 내려가겠죠?
+
+// 항목에 값이 들어가 있지 않으면 생성 안되게 
+// 근데 애초에 생성이 되려면 마지막 친구만 확인ㄴ하면 되는 거잖아
+// 그럼 lastArea를 봐야겠네?
+// lastArea에 접근하려면..?
+
 const additionButton = document.querySelector('.addition-list');
 const list = document.querySelector('.list-wrapper');
 
@@ -9,25 +15,33 @@ additionButton.addEventListener('click', function() {
     // innerHTHML의 경우 그 안에 있는 내용을 전부 바꿔버린다.
     // 그런데 이렇게 했을 때도 추가해서 결국 =을 넣는 거라서 내용이 바뀜
 
+    // 마지막 친구 데려오기
+    const lastListContainer = list.querySelector('.list-container:last-child');
+    const lastText = lastListContainer.querySelector('.list-text');
+
+    const lastTextContent = lastText.value;
     const newTodo = `
         <div class = "list-container">
             <input type = "checkbox" class = "check-box" >
-            <textarea id = "todo-text" rows = "1" placeholder="할 일" class = "list-text"></textarea>
+            <textarea rows = "1" placeholder="할 일" class = "list-text"></textarea>
             <i class="delete-button fa-solid fa-xmark "></i>
         </div>
     `
 
-    // 새 리스트 html 내용을 추가해주세용
-    list.insertAdjacentHTML('beforeend', newTodo);
-    console.log('입력');
+    // trim을 붙여서 띄어쓰기 다 빼기. 
+    if(lastTextContent.trim()) {
+        // 새 리스트 html 내용을 추가해주세용 - 맨 뒤에 추가해달라
+        list.insertAdjacentHTML('beforeend', newTodo);
+        console.log('입력');
+    }
+    else {
+        alert("할 일 목록을 작성해주세요.");
+    }
 })
 
 // 저기 맞는 x버튼을 누르면 해당되는 list-container를 삭제하면 됨.
 // 그러면 this를 써서 가져오면 되겠죠?
 // 그런데 부모라서 this로 가져올 수 있을까요?
-// 거의 다 왔어 아니 진짜 다왔다.
-// 아니다 한 개 더 남았다. 
-// 아맞다 두 개 더 남았다.
 
 // 아 신기한 게 저렇게 addEvent로 해서 이벤트로 하면 브라우저에 처음에 없던건
 // 걸리지 않는대
@@ -62,6 +76,7 @@ listWrapper.addEventListener('click', function(event) {
     }
 
     // toggle로 classList 추가하는 걸로 해결~
+    // checkbox 관련
     if(event.target.classList.contains('check-box')) {
         let listContainer = event.target.closest('.list-container');
         let listText = listContainer.querySelector('.list-text');
@@ -80,16 +95,17 @@ let lastText = ""
 // 전반적인 것에 대한 관리가 필요하다면 이렇게 할 수 있다.
 // 위의 foreach문은 초기부터 제작이 안되어 있었기 때문에 벌어지는 일 아닐까 싶다.
 
+// textarea 높이 조절하기
 listWrapper.addEventListener('input', function(event) {
     if(event.target.classList.contains('list-text')) {
         // 아 높이에 대한 초기화가 필요하구나
         const textarea = event.target;
         
         textarea.style.height = '38px';
-        let newHeight = textarea.scrollHeight;
+        let newHeight = textarea.scrollHeight; // 이런 식으로 해서 그 요소의 scrollHeight 계산
 
-        if(newHeight > 107) {
-            newHeight = 107;
+        if(newHeight > 125) {
+            newHeight = 108;
             // 이런 식으로 바로 value 값에 영향을 끼칠 수 있구나.
             textarea.value = lastText;
         }
