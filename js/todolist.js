@@ -62,7 +62,21 @@ function saveStorage() {
 // 그래서 그 값들을 그 뒤에 html 붙이는 형식으로 해서 가져오면 되는 거 아닌가
 function loadStorage() {
     // localStorage에 저장된 배열 가져오기
+    const todoList = JSON.parse(localStorage.getItem('todos'));
     //forEach 문으로 각각을 가져오기
+    todoList.forEach(function(todo){
+        const updateTodo = `
+            <div class = "list-container">
+                <input type = "checkbox" class = "check-box" ${todo.state ? 'checked' : ''} >
+                <textarea rows = "1" placeholder="할 일" class = "list-text ${todo.state ? 'completed' : ''}">${todo.textArea}</textarea>
+                <i class="delete-button fa-solid fa-xmark "></i>
+            </div>  
+        `
+
+        list.insertAdjacentHTML('beforeend', updateTodo);
+    })
+    lengthCal(); // 여기서 새로 또 작업하게 하기.
+    console.log("불러오기");
     // 해당 배열에 들어가 있는 textArea, state 가져오기
     // state는 true, false에 대해 class가 붙거나 안 붙으니까 그거 조건문 작성
     
@@ -223,3 +237,4 @@ time.innerHTML = now.toLocaleDateString();
 // 로딩 시 실행되야 하는 것들.
 // 맨 처음 화면 로딩될 때 실행함.
 lengthCal();
+loadStorage();
