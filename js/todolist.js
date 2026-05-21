@@ -66,7 +66,7 @@ function loadStorage() {
     //forEach 문으로 각각을 가져오기
     todoList.forEach(function(todo){
         const updateTodo = `
-            <div class = "list-container">
+            <div class = "list-container" draggable = "true">
                 <input type = "checkbox" class = "check-box" ${todo.state ? 'checked' : ''} >
                 <textarea rows = "1" placeholder="할 일" class = "list-text ${todo.state ? 'completed' : ''}">${todo.textArea}</textarea>
                 <i class="delete-button fa-solid fa-xmark "></i>
@@ -82,6 +82,43 @@ function loadStorage() {
     
 }
 
+
+// drag 관련 
+// drag 시작할 때 , drag 올라갈 때, drag 놓을 때
+
+// drag 시작
+// 지금 드레그 중인 요소가 무엇인지.
+// 음. 드래그 중인 요소의 container 인덱스를 가져올 수 있으면 좋을 것 같다.
+
+// 그러면 드레그 중인 요소를 가져오려면 event로 처리할 수 있는 거 아닐까?
+// 드래그한 요소 가져오기 
+let dragTarget = null;
+
+list.addEventListener('dragstart', function(event) {
+    dragTarget = event.target; // 여기는 그냥 자동으로 뭐든 드래그 가능
+    console.log(dragTarget);    
+})
+
+list.addEventListener('dragover', function(event) {
+    event.preventDefault();
+})
+
+list.addEventListener('drop', function(event) {
+    // 저 element beforebegin이 뭘까?
+
+    // 여기서 놓을 수 있는 것에 대해 한정을 둠.
+    const dropTarget = event.target.closest('.list-container');
+    console.log(dropTarget);
+    // 위치가 같으면 작동 안되게
+    if(dragTarget !== dropTarget) {
+        dropTarget.insertAdjacentElement('beforebegin', dragTarget);
+        saveStorage();
+        console.log('드래그 작동');
+    }
+    
+    
+})
+
 additionButton.addEventListener('click', function() {
     // innerHTHML의 경우 그 안에 있는 내용을 전부 바꿔버린다.
     // 그런데 이렇게 했을 때도 추가해서 결국 =을 넣는 거라서 내용이 바뀜
@@ -91,7 +128,7 @@ additionButton.addEventListener('click', function() {
    
 
     const newTodo = `
-        <div class = "list-container">
+        <div class = "list-container" draggable = "true">
             <input type = "checkbox" class = "check-box" >
             <textarea rows = "1" placeholder="할 일" class = "list-text"></textarea>
             <i class="delete-button fa-solid fa-xmark "></i>
