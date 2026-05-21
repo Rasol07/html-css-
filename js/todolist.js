@@ -1,3 +1,22 @@
+// 전체 / 완료 개수 구하기
+// list-container 의 총 갯수 -> length를 구해서 그 값을 입력하면 됨
+// completed의 총 갯수 가져오면 됨.
+
+
+// 언제 해당 값을 넣을지를 생각해야함.
+// 추가 / 삭제/ 체크 시 모두 적용이 되어야 한다.
+// 그러면 일단은 그냥 함수를 만드는 게 좋겠네
+function lengthCal() {
+    const listLength = list.querySelectorAll('.list-container').length;
+    const completedListLength = list.querySelectorAll('.completed').length;
+    const lengthContainer = document.querySelector('.length');
+    lengthContainer.innerHTML = `
+        <p>
+            ${completedListLength} / ${listLength}
+        </p>
+    `
+}
+
 // + 버튼 누르면
 // 저거 리스트가 하나 떠야하고
 // + 버튼은 아래로 내려가야 한다.
@@ -11,15 +30,52 @@
 const additionButton = document.querySelector('.addition-list');
 const list = document.querySelector('.list-wrapper');
 
+
+// locatStorage 추가
+
+// 이거 할 때 마다 지금 현재의 list-container 돌아서 확인하기
+function saveStorage() {
+    const todoList = []; // 해당 함수가 
+    // 그러면 list-container에 대해서 다 돌아야 겟네?
+    const listContainer = document.querySelectorAll('.list-container');
+    listContainer.forEach(function(container){
+        // list-container에 들어있는 값들 저장하고, completed 정도 가져오기
+        // 값 가져오기
+        const textArea = container.querySelector('.list-text').value;
+        
+        // completed 가져오기
+        
+        const completedState = container.querySelector('.list-text');
+        const state = completedState.classList.contains('completed');
+
+        todoList.push({textArea, state});
+        
+    })
+    localStorage.setItem('todos', JSON.stringify(todoList));
+    console.log("작동");
+}
+
+// loadStorage 생각하기
+// 그냥  localStorage에 저장되어 있던 배열들 가져와
+// 그 배열 값들을 forEach문 돌려
+// 각각의 값들을 text, state로 가져와
+// 그래서 그 값들을 그 뒤에 html 붙이는 형식으로 해서 가져오면 되는 거 아닌가
+function loadStorage() {
+    // localStorage에 저장된 배열 가져오기
+    //forEach 문으로 각각을 가져오기
+    // 해당 배열에 들어가 있는 textArea, state 가져오기
+    // state는 true, false에 대해 class가 붙거나 안 붙으니까 그거 조건문 작성
+    
+}
+
 additionButton.addEventListener('click', function() {
     // innerHTHML의 경우 그 안에 있는 내용을 전부 바꿔버린다.
     // 그런데 이렇게 했을 때도 추가해서 결국 =을 넣는 거라서 내용이 바뀜
 
     // 마지막 친구 데려오기
     const lastListContainer = list.querySelector('.list-container:last-child');
-    const lastText = lastListContainer.querySelector('.list-text');
+   
 
-    const lastTextContent = lastText.value;
     const newTodo = `
         <div class = "list-container">
             <input type = "checkbox" class = "check-box" >
@@ -28,15 +84,31 @@ additionButton.addEventListener('click', function() {
         </div>
     `
 
-    // trim을 붙여서 띄어쓰기 다 빼기. 
-    if(lastTextContent.trim()) {
-        // 새 리스트 html 내용을 추가해주세용 - 맨 뒤에 추가해달라
+    if(!lastListContainer) {
         list.insertAdjacentHTML('beforeend', newTodo);
         console.log('입력');
+        saveStorage();
+        lengthCal();
     }
     else {
-        alert("할 일 목록을 작성해주세요.");
+         const lastText = lastListContainer.querySelector('.list-text');
+        const lastTextContent = lastText.value;
+
+        // trim을 붙여서 띄어쓰기 다 빼기. 
+        if(lastTextContent.trim()) {
+            // 새 리스트 html 내용을 추가해주세용 - 맨 뒤에 추가해달라
+            list.insertAdjacentHTML('beforeend', newTodo);
+            console.log('입력');
+            saveStorage();
+            lengthCal();
+            
+        }
+        else {
+            alert("할 일 목록을 작성해주세요.");
+        }
     }
+
+   
 })
 
 // 저기 맞는 x버튼을 누르면 해당되는 list-container를 삭제하면 됨.
@@ -71,7 +143,9 @@ listWrapper.addEventListener('click', function(event) {
         let listContainer = event.target.closest('.list-container');
         if(listContainer) {
             listContainer.remove();
+            saveStorage();
             console.log('삭제');
+            lengthCal()
         }
     }
 
@@ -83,6 +157,8 @@ listWrapper.addEventListener('click', function(event) {
         if(listText.value.trim() !== "") {
             listText.classList.toggle('completed');
             console.log('됐나?');
+            saveStorage();
+            lengthCal()
         }
     }
 })
@@ -115,6 +191,9 @@ listWrapper.addEventListener('input', function(event) {
         }
         textarea.style.height = newHeight + 'px';
         console.log(newHeight);
+
+        let textContent = textarea.value;
+        saveStorage();
     }
 })
 
@@ -134,3 +213,13 @@ let now = new Date();
 
 time.innerHTML = now.toLocaleDateString();
 
+// localStorage 쓰려고 보기
+// 음 일단 이게 (key, value)로 저장이 되잖아?
+// 그러면 일단 key, value로 들어가려면
+// key를 현재 index를 표현하는 변수가 필요하겟네
+// 전반적으로 다 적용되게 let 을 밖으로 빼기
+// 일단 얘가 textarea에 작성하면 추가하게 하기
+
+// 로딩 시 실행되야 하는 것들.
+// 맨 처음 화면 로딩될 때 실행함.
+lengthCal();

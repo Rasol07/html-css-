@@ -110,8 +110,11 @@ body {
     color : rgb(232, 181, 255);
 }
 
-
-
 .completed {
     text-decoration: line-through;
+}
+
+.length {
+    text-align: center;
+    
 }
