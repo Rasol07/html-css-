@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'GMARKET_SANS'; /* 대표 폰트 이름을 하나로 통일 */
+    src: url('../font/GmarketSansTTFBold.ttf') format('truetype');
+    font-weight: 700; /* BOLD에 해당하는 굵기 지정 */
+    font-style: normal;
+}
+
+/* 2. GMARKET_MEDIUM 폰트 정의 */
+@font-face {
+    font-family: 'GMARKET_SANS'; /* 같은 이름 사용 */
+    src: url('../font/GmarketSansTTFMedium.ttf') format('truetype');
+    font-weight: 500; /* MEDIUM에 해당하는 굵기 지정 */
+    font-style: normal;
+}
+
+/* 3. GMARKET_LIGHT 폰트 정의 */
+@font-face {
+    font-family: 'GMARKET_SANS'; /* 같은 이름 사용 */
+    src: url('../font/GmarketSansTTFLight.ttf') format('truetype');
+    font-weight: 300; /* LIGHT에 해당하는 굵기 지정 */
+    font-style: normal;
+}
+
+body {
+    background-color: black;
+    display : flex;
+    justify-content: center; /* 행 중앙 정렬*/
+    flex-direction: column; /* 이렇게 해서 배치 방향 바꾸기 원래는 rows임*/
+    align-items: center; /*가로로 중앙 정렬*/
+
+    color : white;
+    font-family : 'GMARKET_SANS';
+    padding : 1%;
+}
+
+.main-title {
+    font-weight : 700;
+    font-size : 48px;
+    margin-bottom : 50px;
+}
+
+.card-container {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    width : 60%;
+}
+
+.question-container {
+    width : 100%;
+    font-size : 26px;
+    margin-bottom : 30px;
+    border : 1px solid white;
+    border-radius : 10px;
+
+    padding : 20px;
+    display : flex;
+    justify-content: center; /* 이 컨텐츠에 대한 조절 위한 값이 있어야 함*/
+    align-items: center;
+    text-align: center; /* 그냥 글 자체를 중앙으로 해줌,. */
+}
+
+
+
+.example-container {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    font-size : 17px;
+    gap : 13px;
+}
+
+.example {
+    display : flex;
+    
+    align-items: center;
+    gap : 10px;
+    cursor : pointer;
+    transition: all 0.5s ease-in;
+}
+
+.example:hover p{
+    color : rgb(187, 145, 227);
+}
+
+.example:hover button {
+    background-color: rgb(187, 145, 227);
+    color : white;
+}
+
+.example button {
+    vertical-align: middle;
+    aspect-ratio: 1 / 1;
+    padding : 3px;
+    padding-left : 7px;
+    padding-right : 7px;
+    text-align: center;
+    
+    font-size: 15px;
+    border-radius : 50%;
+    border : none;
+    transition: all 0.3s ease;
+}
+
+
+
+.example p {
+    margin : 0px;
+    line-height : 1;
+    box-sizing:border-box;
+    padding-top : 5px;
+   
+}   
