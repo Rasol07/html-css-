@@ -111,3 +111,38 @@ body {
     padding-top : 5px;
    
 }   
+
+.answer {
+    display : none;
+    position: fixed;
+    top : 50%; left : 50%;
+    transform: translate(-50%, -50%); /* 왜 이게 들어가야 할까.*/
+    z-index : 20;
+
+}
+
+.answer-background {
+    display : none;
+    width : 100%;
+    height : 100%;
+    position: fixed;
+    top : 0;
+    left : 0;
+    z-index : 10;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.answer p {
+    font-size : 40px;
+    font-weight : 700;
+}
+
+.correct {
+    display : block;
+    color : rgb(122, 137, 255);
+}
+
+.wrong {
+    display : block;
+    color : red;
+}
