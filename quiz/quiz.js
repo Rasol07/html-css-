@@ -39,6 +39,18 @@ const questions = [
     },
 ]
 
+// 랜덤으로 배치하기 - sort 관련 개념
+// 배열.sort() 하면 그 안에 있는 값 자체의 순서대로 작동함
+// 그런데 그 sort 안에 있는 갑싱 있으면, 그 안에 값에 따라서 배치의 위치가 갈림
+// 그래서 그 안에 있는 것을 random 으로 해서 랜덤으로 sort 되게 만ㄷ름
+// random()은 내부의 인자를 받지 못함.
+
+questions.sort(function() {
+    return Math.random() - 0.5; // 이런 식으로 해서 양수와 음수로 구분되게 함.
+})
+
+
+
 // 2. 해당 퀴즈 항목들을 적용 시키는 방법
 // - 일단 forEach문 돌려서 하나 작업해서 맞은지 틀린지 구분해서 진행시키는 방식?
 // - 하나 문제 나옴
@@ -182,6 +194,7 @@ card.addEventListener('click', function(e){
                 answer.querySelector('p').innerHTML = `${totalCount}개 중 ${correctCount}개 맞추셨습니다. `;
             }, 2000);
 
+            
             
             
         }
