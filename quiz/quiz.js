@@ -95,9 +95,10 @@ const answer = document.querySelector('.answer');
 // 안에 카드 보여주는 거
 function showQuestion() {
     // 정답 화면 없애는 거  -> display : none 걸기
-    answerBackground.style.display = 'none';
+    answerBackground.classList.remove('look');
     answer.classList.remove('correct');
     answer.classList.remove('wrong');
+    answer.classList.add('dislook');
 
     const content = `
         <div class = "question-container">
@@ -149,7 +150,7 @@ card.addEventListener('click', function(e){
         if(clickIndex == questions[currentIndex].answer) {
             console.log("정답");
             // 여기에 정답 화면 띄우는 거 만들기
-            answerBackground.style.display = 'block';
+            answerBackground.classList.add('look');
             answer.classList.add('correct');
             answer.querySelector('p').innerHTML = "정답입니다!";
             correctCount++;
@@ -158,7 +159,7 @@ card.addEventListener('click', function(e){
         else {
             console.log("오답");
             // 오답 화면 만들기
-            answerBackground.style.display = 'block';
+            answerBackground.classList.add('look');
             answer.classList.add('wrong');
             answer.querySelector('p').innerHTML = "오답입니다!";
         }
@@ -170,12 +171,18 @@ card.addEventListener('click', function(e){
         if(currentIndex >= questions.length - 1) {
             // 결과 화면 넘어가기 
             // 그냥 결과 화면 답 내용에 넣는 방식으로 해야겠다 귀찮아.
-            answerBackground.style.display = 'block';
-            answer.classList.remove('correct');
-            answer.classList.remove('wrong');
-            answer.style.display = 'block';
-            // 그냥 alert로 알려주는 것도 나쁘진 않겠는데.
-            answer.querySelector('p').innerHTML = `${totalCount}개 중 ${correctCount}개 맞추셨습니다. `;
+            
+
+            setTimeout(function(){
+                answerBackground.classList.add('look');
+                answer.classList.remove('correct');
+                answer.classList.remove('wrong');
+                answer.classList.add('look');
+                // 그냥 alert로 알려주는 것도 나쁘진 않겠는데.
+                answer.querySelector('p').innerHTML = `${totalCount}개 중 ${correctCount}개 맞추셨습니다. `;
+            }, 2000);
+
+            
             
         }
         else {
