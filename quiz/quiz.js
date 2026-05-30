@@ -105,7 +105,45 @@ const answerBackground = document.querySelector('.answer-background');
 const answer = document.querySelector('.answer');
 
 // 안에 카드 보여주는 거
+// 카드 보여주는 거에 interval 넣기 
+// 반복이잖아 그런데
+// 아 그 카드 보여주는 거에 이제 카운트 다운 넣어서 표현하자.
+// 그러면 그 카운트를 세는 값이 필요할 것
+
+
+let timer = null; // 변화해야해서
+// 계속 showQuestion 내부에서 새롭게 정의되며 작성되야 해서.
+
+// 타이머 세는 거
+// const timer = setInterval(function() {
+//     // 자동적으로 1초 마다 1씩 timeLeft가 감소해야 할 거임
+//     // 그리고 0이 되었을 때 이 반복은 끝나야함.
+//     timeLeft--;
+
+//     if(timeLeft <= 0) {
+//         clearInterval(timer); // 자동으로 없애기.
+//     }
+// }, 1000);
+
+
+const timerPlace = document.querySelector('.timer');
+let timeLeft = 10;
 function showQuestion() {
+    clearInterval(timer);
+    timeLeft = 10;
+    timer = setInterval(function() {
+        // 여기에 그 1초마다 timeLeft 줄어드는 거 해야하고.
+        // 그 경우가 아니면 저렇게 표시하면 된다.
+        // 음. 그리고 마지막 문제에 도착하면 이 타이머가 꺼지게 만들어야 겠네.
+
+        timeLeft--;
+        timerPlace.innerHTML = `${timeLeft}초`;
+        
+        if(timeLeft<=0) {
+            nextQuestion();
+        }
+        
+    }, 1000);
     // 정답 화면 없애는 거  -> display : none 걸기
     answerBackground.classList.remove('look');
     answer.classList.remove('correct');
@@ -148,6 +186,16 @@ function showQuestion() {
     console.log("업데이트");
 }
 
+// 반복적으로 나오는 2초 후에 문제 띄우는 것
+
+function nextQuestion() {
+    clearInterval(timer);
+    currentIndex++;
+    setTimeout(function() {
+        showQuestion()
+    }, 2000);
+}
+
 const exampleButtons = document.querySelectorAll('.example');
 
 // 여기서도 동적으로 작동하는 거는 이렇게 작동되지 않는 모양임.
@@ -183,7 +231,7 @@ card.addEventListener('click', function(e){
         if(currentIndex >= questions.length - 1) {
             // 결과 화면 넘어가기 
             // 그냥 결과 화면 답 내용에 넣는 방식으로 해야겠다 귀찮아.
-            
+            clearInterval(timer);
 
             setTimeout(function(){
                 answerBackground.classList.add('look');
@@ -199,10 +247,7 @@ card.addEventListener('click', function(e){
             
         }
         else {
-            currentIndex++;
-            setTimeout(function() {
-                showQuestion()
-            }, 2000);
+            nextQuestion();
         }
         
     }
