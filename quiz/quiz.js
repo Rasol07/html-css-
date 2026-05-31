@@ -128,6 +128,7 @@ let timer = null; // 변화해야해서
 
 const timerPlace = document.querySelector('.timer');
 let timeLeft = 10;
+
 function showQuestion() {
     clearInterval(timer);
     timeLeft = 10;
