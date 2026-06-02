@@ -2,18 +2,104 @@
 <html>
 <head>
     <meta charset="UTF-8" />
+    <link rel = "stylesheet" href = "diary.css">
     <title>다이어리</title>
 </head>
 <body>
     <!-- 왼쪽 -->
     <div class = "left-container">
-        <!-- 달력 -->
-         <div class = "calendar">
+        <!-- 캐릭터 얼굴 -->
+        <div class = "character">
+            <p class = "name">
+                추세아
+            </p>
+            <img src = "일러스트505.png">
 
-         </div>
+            <!-- 캐릭터 대사 -->
+            
+            <p class = "reaction">
+                반응란입니다.
+            </p>
+        </div>
+
+        
+        <!-- 달력 -->
+        <div class = "calendar">
+            <!-- 달력 헤더 오늘 월 적어놓는 거 -->
+            <div class = "calendar-header">
+                <button class = "prev-button"> < </button>
+                <span class = "current"> 2026. 6 </span>
+                <button class = "next-button"> > </button> 
+            </div>
+            <!-- 요일 -->
+            <div class = "calendar-days">
+                <span> 일 </span>
+                <span> 월 </span>
+                <span> 화 </span>
+                <span> 수 </span>
+                <span> 목 </span>
+                <span> 금 </span>
+                <span> 토 </span>
+            </div>
+
+            <!-- 날들 -->
+            <div class = "calendar-dates">
+
+            </div>
+        </div>
+
+        <!-- 투두 리스트 -->
+        <div class = "todoList-container">
+            <div class = "todo">
+                <input type="checkbox" class = "check">
+                <input type="text" class = "todo-content">
+            </div>
+
+            <button class = "plus-todolist">+</button>
+        </div>
     </div>
         
 
     <!-- 오른쪽 -->
+    <div class = "right-container">
+        <!-- 일기 목록들 -->
+        <div class = "diary-container">
+            <div class = "diary">
+                <span class = "title">
+                    일기 제목
+                </span>
+                <p class = "time"> 2026. 06. 02 17:21</p>
+                <p class = "diary-content">
+                    어쩌고 저쩌고 적혀있는 것들입니다. 뭐 추가로 넘어가면 자동으로 뒤로 가는 그런 거 있겠죠ㅕ? 
+                    그렇겠죳? 네 ? 제발요~ㅇㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴ
+                </p>
+            </div>
+            
+            <div class = "diary">
+                <span class = "title">
+                    일기 제목
+                </span>
+                <p class = "time"> 2026. 06. 02 17:21</p>
+                <p class = "diary-content">
+                    어쩌고 저쩌고 적혀있는 것들입니다. 뭐 추가로 넘어가면 자동으로 뒤로 가는 그런 거 있겠죠ㅕ? 
+                    그렇겠죳? 네 ? 제발요~ㅇㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴ
+                </p>
+            </div>
+
+            <div class = "diary">
+                <span class = "title">
+                    일기 제목
+                </span>
+                <p class = "time"> 2026. 06. 02 17:21</p>
+                <p class = "diary-content">
+                    어쩌고 저쩌고 적혀있는 것들입니다. 뭐 추가로 넘어가면 자동으로 뒤로 가는 그런 거 있겠죠ㅕ? 
+                    그렇겠죳? 네 ? 제발요~ㅇㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴ
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- +버튼 -->
+    <button class = "plus-button"> + </button>
 </body>
 </html>
