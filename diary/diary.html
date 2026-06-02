@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <link rel = "stylesheet" href = "diary.css">
+    <link rel = "stylesheet" href = "../font/pretendard.css">
     <title>다이어리</title>
 </head>
 <body>
@@ -10,18 +11,19 @@
     <div class = "left-container">
         <!-- 캐릭터 얼굴 -->
         <div class = "character">
-            <p class = "name">
-                추세아
-            </p>
+            
             <img src = "일러스트505.png">
 
             <!-- 캐릭터 대사 -->
-            
+            <p class = "name">
+                추세아
+            </p>
             <p class = "reaction">
                 반응란입니다.
             </p>
         </div>
 
+        <hr style = "margin-top : 20px; margin-bottom: 20px;">
         
         <!-- 달력 -->
         <div class = "calendar">
@@ -52,7 +54,7 @@
         <div class = "todoList-container">
             <div class = "todo">
                 <input type="checkbox" class = "check">
-                <input type="text" class = "todo-content">
+                <input type="text" class = "todo-content"> 
             </div>
 
             <button class = "plus-todolist">+</button>
@@ -101,5 +103,8 @@
 
     <!-- +버튼 -->
     <button class = "plus-button"> + </button>
+
+    <script src = "diary.js"></script>
+    <script src = "calendar.js"></script>
 </body>
 </html>
