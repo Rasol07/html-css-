@@ -1,14 +1,15 @@
 body {
-    padding : 1%;
-    padding-left : 3%;
-    padding-right : 3%;
+    padding : 2%;
+    padding-left : 10%;
+    padding-right : 10%;
     display : flex;
+    justify-content: space-between;
     font-family : 'Pretendard';
 }
 
 /* --- 왼쪽 컨테이너 -- */
 .left-container {
-    width : 15%;
+    width : 20%;
     padding : 10px;
     margin-right : 50px;
 }
@@ -109,6 +110,10 @@ body {
     border-radius : 25px;
 }
 
+.calendar-dates span {
+    cursor : pointer;
+}
+
 /* - 투두리스트 관련 -- */
 .todoList-container {
     width : 100%;
@@ -155,7 +160,7 @@ body {
 /* --- 우측 컨테이너 --- */
 
 .right-container {
-    width : 80%;
+    width : 70%;
     
     margin-top: 10px;
     
@@ -170,9 +175,31 @@ body {
 
 /* -- 다이어리 항목 -- */
 .diary {
-    padding : 15px;
-    background-color: aliceblue;
+    padding : 20px;
+    padding-top : 30px;
+    background-color: rgba(193, 159, 197, 0.418);
+    border-radius: 10px;
     margin-bottom : 20px;
+}
+
+.title {
+    font-size : 24px;
+    font-weight : 600;
+    
+}
+
+.time{
+    font-size : 13px;
+    margin : 0px;
+    margin-top : 5px;
+    color : white;
+}
+
+.diary-content {
+    font-size : 14px;
+    font-weight : 300;
+    line-height: 1.5;
+    
 }
 
 /* --- 추가버튼 --- */
@@ -187,4 +214,95 @@ body {
     border : none;
     font-size : 20px;
     cursor : pointer;
+}
+
+/* 모달창 */
+
+.modal-background {
+    display : none;
+    position: fixed;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    z-index : 5;
+    background-color: rgba(0, 0, 0, 0.263);
+}
+
+.diary-enter {
+    display : none;
+    width : 50%;
+    position: fixed;
+    left : 25%;
+
+    padding : 20px;
+    
+    z-index : 10;
+    background-color: rgb(235, 218, 236);
+    border-radius : 10px;
+
+    /* display : flex; */
+    flex-direction: column;
+    gap : 10px;
+}
+
+.title-enter {
+    appearance: none;
+    background-color: transparent;
+    outline : none;
+    border : none;
+    border-bottom :1px solid rgb(83, 24, 69);
+    border-radius : 5px 5px 0px 0px;
+    padding : 10px;
+    font-size : 24px;
+    font-family : 'Pretendard';
+    font-weight : 600;
+
+}
+
+.content-enter {
+    appearance: none;
+    background-color: transparent;
+    outline: none;
+    border : none;
+    padding : 10px;
+    resize : none;
+    overflow-y:hidden;
+    font-size : 14px;
+    font-family: 'Pretendard';
+    font-weight : 400;
+    line-height: 1.5;
+}
+
+
+
+.diary-button {
+    width : 100%;
+    display : flex;
+    justify-content: end;
+    gap : 10px;
+}
+
+.diary-button button {
+    border : 1px solid black;
+    padding : 7px;
+    padding-top : 6px;
+    padding-bottom : 6px;
+    border-radius : 10px;
+    font-size : 13px;
+    cursor : pointer;
+    text-align: center;
+
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.diary-save:hover {
+    background-color: rgb(83, 24, 69);
+    color : white;
+}
+
+.diary-close:hover {
+    background-color: rgb(146, 34, 34);
+    color : white;
 }

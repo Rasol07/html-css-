@@ -1,7 +1,16 @@
 // 달력 관련 변동 js 구현
 // --- 전역 변수 ---
-let currentYear = 2026;
-let currentMonth = 6; 
+let currentYear = new Date().getFullYear();
+let currentMonth = new Date().getMonth() + 1; 
+let day = new Date().getDate();
+
+// 전반적인 내용들에 대한 정리를 위해 존재.
+let selectedDate = {
+    year : currentYear,
+    month : currentMonth,
+    day : day
+}; // {year:, Month, Day } 구조
+// 클릭할 떄 내용 뽑아와야겠고, 
 // 그냥 못 뽑아 오나? 
 
 // --- 쿼리 셀렉터 --- 
@@ -33,12 +42,11 @@ function renderCalendar() {
     }
 
     for(let i = 1 ; i <= lastDay; i++) {
-        if((i  == new Date().getDate()) && (currentYear == new Date().getFullYear()) && (currentMonth == new Date().getMonth() + 1) ) {
-            dateContents += `<span class = "today"> ${i} </span>`
-        }
-        else {
-            dateContents += `<span> ${i} </span>`
-        }   
+        const isSelected = selectedDate && (i == selectedDate.day) && (currentMonth == selectedDate.month) && (currentYear == selectedDate.year);
+        
+        dateContents += `
+            <span class = "${isSelected ? 'today' : ''}">${i}</span>
+        `
         
     }
 
