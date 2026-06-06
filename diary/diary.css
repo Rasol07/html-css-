@@ -138,6 +138,10 @@ body {
    padding : 3px;
 }
 
+.completed {
+    text-decoration: line-through;
+}
+
 .plus-todolist {
     width : 100%;
     height : 24px;
