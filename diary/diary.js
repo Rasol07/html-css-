@@ -37,6 +37,8 @@ function showDate() {
     `;
 }
 
+// 순서 문제는 참 무섭다. 
+
 function showDiary() {
     diaryContainer.innerHTML = ``;
     // 그러면 해당 키값의 data를 배열로 가져오기
