@@ -56,8 +56,7 @@ function showDiary() {
                     ${diary.title}
                 </span>
                 <p class = "time">${diary.time}</p>
-                <p class = "diary-content">
-                    ${diary.content}
+                <p class = "diary-content">${diary.content}
                 </p>
             </div>
         `
@@ -117,9 +116,22 @@ saveButton.addEventListener('click', function() {
     enterDiary.style.display = 'none';
 })
 
+// textArea 부분 input 이벤트로 받아서 그 스크롤 정도의 height 조절하는 거 만들기!
+contentEnter.addEventListener('input', function() {
+    // 해당 스크롤 길이를 가져와야 함.
+
+    // 스크롤 초기화가 필요함. -> 글자 지울 때를 생각하기
+    contentEnter.style.height = 'auto'; // 기본적으로 input 이 들어갈떄 길이에 대한 초기화를 함.
+
+    contentEnter.style.height = contentEnter.scrollHeight + 'px';
+    
+})
+
 // --- 업데이트 ---
 
 showDate();
 showDiary();
+
+// 엔터 들어갔을 때 저장되는 거 구분
 
 

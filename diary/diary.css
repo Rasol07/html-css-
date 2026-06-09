@@ -199,7 +199,7 @@ body {
     font-size : 14px;
     font-weight : 300;
     line-height: 1.5;
-    
+    white-space : pre-wrap; 
 }
 
 /* --- 추가버튼 --- */
@@ -244,6 +244,8 @@ body {
     /* display : flex; */
     flex-direction: column;
     gap : 10px;
+    max-height : 80vh;
+    
 }
 
 .title-enter {
@@ -267,11 +269,16 @@ body {
     border : none;
     padding : 10px;
     resize : none;
-    overflow-y:hidden;
+    
     font-size : 14px;
     font-family: 'Pretendard';
     font-weight : 400;
     line-height: 1.5;
+
+    max-height : 80vh;
+    overflow-y:scroll;
+
+    
 }
 
 
